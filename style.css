@@ -29,3 +29,13 @@ img[alt="Prepared Alumni"] {
 .story-content {
   max-height: 900px !important;
 }
+.name::before {
+  content: "👑 THE KING 👑 ";
+  font-size: 24px;
+  font-weight: 900;
+  color: gold;
+  text-shadow:
+    0 0 5px orange,
+    0 0 10px red,
+    2px 2px 0 black;
+}
