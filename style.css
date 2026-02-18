@@ -1,0 +1,31 @@
+div.card.expanded.bg-black {
+    background: red !important;
+}
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  text-transform: uppercase;
+}
+
+* { animation: w 5s infinite alternate; }
+@keyframes w { from { transform: rotate(-1deg); } to { transform: rotate(1deg); } }
+
+img { animation: spin 5s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+img[alt="Cortland Daws"] {
+  width: 300px !important;
+  height: 300px !important;
+}
+.dr-list.peers-list img {
+  content: url("https://dev1lcec.github.io/uhh/tom.jpeg");
+}
+img[alt="Prepared Alumni"] {
+  content: url("https://dev1lcec.github.io/uhh/eoy.png");
+  animation: none !important;
+}
+.no-spin {
+  animation: none !important;
+}
+.story-content {
+  max-height: 900px !important;
+}
