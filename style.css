@@ -29,58 +29,76 @@ img[alt="Prepared Alumni"] {
 .story-content {
   max-height: 900px !important;
 }
-/* Full-screen layer */
-  .fireworks{
+  /* Full-screen layer */
+  .matrix{
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 0;            /* raise to 9999 if you want it on top */
     overflow: hidden;
-    /* optional: darken background a bit for effect */
-    background: radial-gradient(circle at 50% 60%, rgba(0,0,0,.35), rgba(0,0,0,.75));
+    background: #000;
   }
 
-  /* Each burst is a radial spray of “sparks” using a repeating conic gradient */
-  .burst{
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,.4));
-    /* sparks: alternating bright + transparent spokes */
-    background:
-      repeating-conic-gradient(
-        from 0deg,
-        rgba(255,255,255,.95) 0 6deg,
-        rgba(255,255,255,0) 6deg 18deg
+  /* The rain: multiple “columns” via layered repeating-linear-gradients */
+  .matrix::before{
+    content:"";
+    position:absolute;
+    inset:-200% 0 0 0;     /* start above view */
+    opacity: .95;
+
+    /* Each layer = a set of columns with different density/spacing */
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,255,90,.0) 0 18px,
+        rgba(0,255,90,.15) 18px 19px,
+        rgba(0,255,90,.0) 19px 34px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,255,90,.0) 0 40px,
+        rgba(0,255,90,.10) 40px 41px,
+        rgba(0,255,90,.0) 41px 70px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0,255,90,.0) 0 85px,
+        rgba(0,255,90,.08) 85px 86px,
+        rgba(0,255,90,.0) 86px 120px
+      ),
+
+      /* Falling “segments” inside columns */
+      repeating-linear-gradient(
+        180deg,
+        rgba(0,255,90,.0) 0 18px,
+        rgba(0,255,90,.18) 18px 19px,
+        rgba(0,255,90,.0) 19px 40px
       );
-    /* bloom ring */
-    box-shadow:
-      0 0 0 0 rgba(255,255,255,.7),
-      0 0 30px 5px rgba(255,255,255,.15);
-    animation: explode 2.4s ease-out infinite;
+
+    background-blend-mode: screen;
+    filter: blur(.2px) drop-shadow(0 0 6px rgba(0,255,90,.35));
+
+    animation: matrix-fall 6s linear infinite;
   }
 
-  /* Explosion animation */
-  @keyframes explode{
-    0%   { transform: translate(-50%, -50%) scale(0);   opacity: 0;   }
-    10%  { opacity: 1; }
-    35%  { transform: translate(-50%, -50%) scale(16);  opacity: .95; }
-    70%  { opacity: .35; }
-    100% { transform: translate(-50%, -50%) scale(22);  opacity: 0;   }
+  /* Add a soft vignette + glow */
+  .matrix::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at 50% 40%, rgba(0,255,90,.10), rgba(0,0,0,.85) 65%),
+      linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.85));
+    mix-blend-mode: multiply;
+    pointer-events:none;
   }
 
-  /* Make each burst unique: position + timing + color */
-  .b1{ left: 18%; top: 65%; animation-delay: .0s;  filter: hue-rotate(0deg)   drop-shadow(0 0 12px rgba(255,255,255,.4)); }
-  .b2{ left: 35%; top: 35%; animation-delay: .6s;  filter: hue-rotate(60deg)  drop-shadow(0 0 12px rgba(255,255,255,.4)); }
-  .b3{ left: 55%; top: 55%; animation-delay: 1.2s; filter: hue-rotate(140deg) drop-shadow(0 0 12px rgba(255,255,255,.4)); }
-  .b4{ left: 72%; top: 30%; animation-delay: 1.8s; filter: hue-rotate(220deg) drop-shadow(0 0 12px rgba(255,255,255,.4)); }
-  .b5{ left: 82%; top: 70%; animation-delay: 2.1s; filter: hue-rotate(300deg) drop-shadow(0 0 12px rgba(255,255,255,.4)); }
-  .b6{ left: 45%; top: 78%; animation-delay: 2.4s; filter: hue-rotate(20deg)  drop-shadow(0 0 12px rgba(255,255,255,.4)); }
+  @keyframes matrix-fall{
+    from { transform: translateY(0); }
+    to   { transform: translateY(50%); }
+  }
 
   /* Optional: respect reduced motion */
   @media (prefers-reduced-motion: reduce){
-    .fireworks{ display:none; }
+    .matrix::before{ animation: none; }
   }
