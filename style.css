@@ -30,12 +30,12 @@ img[alt="Prepared Alumni"] {
   max-height: 900px !important;
 }
 .name::before {
-  content: "👑 THE KING 👑 ";
-  font-size: 24px;
-  font-weight: 900;
-  color: gold;
-  text-shadow:
+  content: "👑 THE KING 👑 " !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  color: gold !important;
+  text-shadow !important:
     0 0 5px orange,
     0 0 10px red,
-    2px 2px 0 black;
+    2px 2px 0 black !important;
 }
