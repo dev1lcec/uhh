@@ -30,11 +30,11 @@ img[alt="Prepared Alumni"] {
   max-height: 900px !important;
 }
 .glow-box {
-  padding: 40px;
-  border: 3px solid transparent;
+  padding: 40px !important;
+  border: 3px solid transparent !important;
   background:
     linear-gradient(#000, #000) padding-box,
-    linear-gradient(90deg, red, orange, yellow, green, blue, purple) border-box;
-  border-radius: 15px;
-  color: white;
+    linear-gradient(90deg, red, orange, yellow, green, blue, purple) border-box !important;
+  border-radius: 15px !important;
+  color: white !important;
 }
