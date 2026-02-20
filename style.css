@@ -1,7 +1,21 @@
 div.card.expanded.bg-black {
     background: red !important;
 }
+@keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
 body {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff0000,
+    #ff0000 10px,
+    #000000 10px,
+    #000000 20px
+  );
+  background-size: 100px 100px;
+  animation: slide 0.1s linear infinite;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   text-transform: uppercase;
 }
