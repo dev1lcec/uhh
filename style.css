@@ -7,8 +7,8 @@ div.card.expanded.bg-black {
 }
 
 body {
-  margin: 0;
-  overflow: hidden;
+  /*margin: 0;
+  overflow: hidden;*/
   background: conic-gradient(from 0deg, #000, #fff, #000, #fff, #000);
   height: 100vh;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
