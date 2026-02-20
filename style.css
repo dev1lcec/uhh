@@ -1,23 +1,26 @@
 div.card.expanded.bg-black {
     background: red !important;
 }
-@keyframes slide {
-  from { background-position: 0 0; }
-  to { background-position: 50px 50px; }
+@keyframes rotate {
+  from { transform: rotate(0deg) scale(2); }
+  to { transform: rotate(360deg) scale(2); }
 }
 
 body {
-  background: repeating-linear-gradient(
-    45deg,
-    #ff0000,
-    #ff0000 10px,
-    #000000 10px,
-    #000000 20px
-  );
-  background-size: 100px 100px;
-  animation: slide 0.1s linear infinite;
+  margin: 0;
+  overflow: hidden;
+  background: conic-gradient(from 0deg, #000, #fff, #000, #fff, #000);
+  height: 100vh;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   text-transform: uppercase;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: inherit;
+  animation: rotate 1s linear infinite;
 }
 
 * { animation: w 5s infinite alternate; }
