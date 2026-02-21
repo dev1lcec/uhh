@@ -18,26 +18,38 @@
 }
 
 #dg-sig {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 2px 8px;
+    background: #f8f9fa; /* Light grey to blend with dashboard */
+    border: 1px solid #e9ecef;
     border-radius: 12px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    font-family: 'Inter', sans-serif;
-    transition: transform 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-#dg-sig:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.15);
+#dg-sig::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    background: #6c757d; /* Muted blue-grey */
+    color: white;
+    font-size: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 #dg-sig a {
-    color: #00d4ff !important;
+    color: #6c757d !important; /* Muted text */
     text-decoration: none !important;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+#dg-sig a:hover {
+    color: #495057 !important;
 }
