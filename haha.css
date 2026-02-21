@@ -1,10 +1,10 @@
-div.card.expanded.bg-black {
+/*div.card.expanded.bg-black {
     background: red !important;
 }
 
 .story-header-buttons {
     display: none !important;
-}
+}*/
 
 .name::before {
   content: "☣" !important;
