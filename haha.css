@@ -16,3 +16,28 @@
     0 0 10px red,
     2px 2px 0 black !important;
 }
+
+#dg-sig {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    font-family: 'Inter', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+#dg-sig:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#dg-sig a {
+    color: #00d4ff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
