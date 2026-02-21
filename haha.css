@@ -1,0 +1,18 @@
+div.card.expanded.bg-black {
+    background: red !important;
+}
+
+.story-header-buttons {
+    display: none !important;
+}
+
+.name::before {
+  content: "☣" !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  color: gold !important;
+  text-shadow !important:
+    0 0 5px orange,
+    0 0 10px red,
+    2px 2px 0 black !important;
+}
