@@ -1,4 +1,4 @@
-div.card.expanded.bg-black {
+/*div.card.expanded.bg-black {
     background: red !important;
 }
 @keyframes rotate {
@@ -7,8 +7,6 @@ div.card.expanded.bg-black {
 }
 
 body {
-  /*margin: 0;
-  overflow: hidden;*/
   background: conic-gradient(from 0deg, #000, #fff, #000, #fff, #000);
   height: 100vh;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -28,6 +26,7 @@ body::before {
 
 img { animation: spin 5s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+*/
 
 img[alt="Cortland Daws"] {
   width: 300px !important;
