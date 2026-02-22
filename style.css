@@ -1,57 +1,48 @@
-/*div.card.expanded.bg-black {
-    background: red !important;
-}
-@keyframes rotate {
-  from { transform: rotate(0deg) scale(2); }
-  to { transform: rotate(360deg) scale(2); }
-}
-
-body {
-  background: conic-gradient(from 0deg, #000, #fff, #000, #fff, #000);
-  height: 100vh;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  text-transform: uppercase;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: -50%; left: -50%; width: 200%; height: 200%;
-  background: inherit;
-  animation: rotate 1s linear infinite;
-}
-
-* { animation: w 5s infinite alternate; }
-@keyframes w { from { transform: rotate(-1deg); } to { transform: rotate(1deg); } }
-
-img { animation: spin 5s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-*/
-
-img[alt="Cortland Daws"] {
-  width: 300px !important;
-  height: 300px !important;
-}
-.dr-list.peers-list img {
-  content: url("https://dev1lcec.github.io/uhh/tom.jpeg");
-}
-img[alt="Prepared Alumni"] {
-  content: url("https://dev1lcec.github.io/uhh/eoy.png");
-  animation: none !important;
-}
-.no-spin {
-  animation: none !important;
-}
-.story-content {
-  max-height: 900px !important;
-}
+/* Fix for the name badge syntax */
 .name::before {
-  content: "👑 THE KING 👑 " !important;
-  font-size: 24px !important;
-  font-weight: 900 !important;
-  color: gold !important;
-  text-shadow !important:
-    0 0 5px orange,
-    0 0 10px red,
-    2px 2px 0 black !important;
+    content: "☣" !important;
+    font-size: 24px !important;
+    font-weight: 900 !important;
+    color: gold !important;
+    text-shadow: 0 0 5px orange, 0 0 10px red, 2px 2px 0 black !important;
+}
+
+/* Micro-sized Signature Badge */
+#dg-sig {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 2px; /* Reduced margin */
+    padding: 1px 5px; /* Tighter padding */
+    background: #f1f3f5; 
+    border: 1px solid #dee2e6;
+    border-radius: 4px; /* Slightly more square looks more "system" */
+    line-height: 1;
+}
+
+#dg-sig::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px; /* Shrunk from 12px */
+    height: 10px; /* Shrunk from 12px */
+    background: #adb5bd; /* Even lighter grey to be less distracting */
+    color: white;
+    font-size: 7px; /* Tiny font */
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+#dg-sig a {
+    color: #868e96 !important; /* Muted grey */
+    text-decoration: none !important;
+    font-size: 9px; /* Shrunk from 10px */
+    font-weight: 400; /* Normal weight is more "hidden" */
+    letter-spacing: 0px;
+    vertical-align: middle;
+}
+
+#dg-sig a:hover {
+    color: #495057 !important;
+    text-decoration: underline !important;
 }
