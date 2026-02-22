@@ -1,6 +1,6 @@
 /* Fix for the name badge syntax */
 .name::before {
-    content: "☣" !important;
+    content: "☣ " !important;
     font-size: 24px !important;
     font-weight: 900 !important;
     color: gold !important;
