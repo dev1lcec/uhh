@@ -45,7 +45,7 @@ img[alt="Prepared Alumni"] {
 .story-content {
   max-height: 900px !important;
 }
-.name::before {
+/*.name::before {
   content: "👑 THE KING 👑 " !important;
   font-size: 24px !important;
   font-weight: 900 !important;
@@ -54,4 +54,4 @@ img[alt="Prepared Alumni"] {
     0 0 5px orange,
     0 0 10px red,
     2px 2px 0 black !important;
-}
+}*/
